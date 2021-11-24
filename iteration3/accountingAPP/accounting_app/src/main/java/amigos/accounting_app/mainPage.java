@@ -20,7 +20,7 @@ public class mainPage {
 	// link to other frame
 	addPage addpage = new addPage();
 	
-	// 
+	// indicate the condition of the frame
 	String condition = new String();
 	
 	mainPage(){
