@@ -90,8 +90,15 @@ public class accountingTable {
 	}
 	
 	boolean match(Record record, String str) {
-		String str2 = record.year + "," + record.month + "," + record.day + "," + record.type
-				+ "," + record.event + "," + record.amount + "," + record.comment;
+		String str2;
+		if(str.split(",").length == 7) {
+			str2 = record.year + "," + record.month + "," + record.day + "," + record.type
+					+ "," + record.event + "," + record.amount + "," + record.comment;
+		}
+		else {
+			str2 = record.year + "," + record.month + "," + record.day + "," + record.type
+					+ "," + record.event + "," + record.amount;
+		}
 		
 		if(str.contains(str2)) {
 			return true;
@@ -156,7 +163,7 @@ public class accountingTable {
 	                str += (char)i;
 	            }
 	 
-	            System.out.println(str);
+	            //System.out.println(str);
 	 
 	            fw.write(str);
 	            fr.close();
