@@ -8,7 +8,7 @@ Team: 4 amigos
 
 4. We prepared a database for grading, testing, and presentation. The database has some records in October 2021 and November 2021.
 
-5. If you want a empty database, just delete the database.
+5. If you want an empty database, just delete the database.
 
 
 11/25/2021
