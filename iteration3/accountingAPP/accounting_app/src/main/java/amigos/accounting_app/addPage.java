@@ -1,11 +1,9 @@
 package amigos.accounting_app;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Pattern;
@@ -66,7 +64,7 @@ public class addPage {
 		record = new Record();
 		
 		// set frame
-		addMain = new JFrame("Home");
+		addMain = new JFrame("adding");
 		addMain.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // only main page supports close function
 		addMain.setLayout(null);
 		addMain.setResizable(false);
@@ -374,7 +372,7 @@ public class addPage {
 						Calendar calendar = Calendar.getInstance();
 						calendar.setTime(date);
 						record.year = calendar.get(Calendar.YEAR);
-						record.month = calendar.get(Calendar.MONTH);
+						record.month = calendar.get(Calendar.MONTH)+1; // magic number for calendar bug
 						record.day = calendar.get(Calendar.DAY_OF_MONTH);
 						
 						yearGeter.setText(Integer.toString(record.year));

@@ -33,7 +33,7 @@ public class Record {
     void write() throws IOException {
     	File file = new File("resource\\database.csv");
     	BufferedWriter output = new BufferedWriter(new FileWriter(file, true));
-    	String str = year + "," + month + "," + day + "," + amount + "," + event + "," + type + "," + amount + "," + comment + "\n";
+    	String str = year + "," + month + "," + day + "," + type + "," + event + "," + amount + "," + comment + "\n";
     	output.append(str);
     	output.close();
     }
