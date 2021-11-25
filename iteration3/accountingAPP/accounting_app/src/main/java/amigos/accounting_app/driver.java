@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class driver {
 
 	public static void main(String[] args) throws FileNotFoundException {
+		
 		File database = new File("resource\\database.csv");
 		if(!database.exists()) {
 			try {
@@ -32,6 +33,8 @@ public class driver {
 				mainpage.UI();
 			}
 		}
+		
+		System.exit(0);
 	}
 
 }

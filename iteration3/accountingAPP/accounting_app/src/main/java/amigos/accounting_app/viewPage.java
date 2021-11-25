@@ -216,13 +216,22 @@ public class viewPage {
 
 		while(scanner.hasNextLine()) {
 			String []str = scanner.nextLine().split(",");
-			Object []object = {str[2], str[3], str[4], str[5], str[6]};
-			int j = calendar.get(Calendar.YEAR);
-			int i = calendar.get(Calendar.MONTH) + 1;
-			if(Integer.parseInt(str[0]) == j && Integer.parseInt(str[1]) == i){
-				table.model.addRow(object);
+			if(str.length == 7) {
+				Object []object = {str[2], str[3], str[4], str[5], str[6]};
+				int j = calendar.get(Calendar.YEAR);
+				int i = calendar.get(Calendar.MONTH) + 1;
+				if(Integer.parseInt(str[0]) == j && Integer.parseInt(str[1]) == i){
+					table.model.addRow(object);
+				}
 			}
-			
+			else {
+				Object []object = {str[2], str[3], str[4], str[5]};
+				int j = calendar.get(Calendar.YEAR);
+				int i = calendar.get(Calendar.MONTH) + 1;
+				if(Integer.parseInt(str[0]) == j && Integer.parseInt(str[1]) == i){
+					table.model.addRow(object);
+				}
+			}			
 		}
 	}
 	
