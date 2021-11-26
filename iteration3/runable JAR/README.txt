@@ -10,5 +10,10 @@ Team: 4 amigos
 
 5. If you want an empty database, just delete the database.
 
+6. Export function in the menu on the top of the window.
+
+7. Export function only supports existing files.
+
+8. Export supports adding filters.
 
 11/25/2021
