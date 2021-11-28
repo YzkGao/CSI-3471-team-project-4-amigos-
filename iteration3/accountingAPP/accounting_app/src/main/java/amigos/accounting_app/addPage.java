@@ -1,3 +1,9 @@
+/*
+ * Team: 4 amigos
+ * Members: Maiqi Hou, Jingke Shi, Yangzekun Gao, Zhengyan Hu
+ * 
+ * File description: This function creates the adding page.
+ */
 package amigos.accounting_app;
 
 import java.awt.Font;
@@ -59,6 +65,10 @@ public class addPage {
 	JLabel showAmount;
 	// for amount input frame
 	
+	/*
+	 * Function name: addPage
+	 * Description: The default constructor
+	 */
 	addPage(){
 		// set record
 		record = new Record();
@@ -67,7 +77,7 @@ public class addPage {
 		addMain = new JFrame("adding");
 		addMain.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // only main page supports close function
 		addMain.setLayout(null);
-		addMain.setResizable(false);
+		//addMain.setResizable(false);
 		addMain.setSize(700, 900);
 				
 		// set frame icon
@@ -210,6 +220,10 @@ public class addPage {
 		
 	}
 	
+	/*
+	 * Function name: UI
+	 * Description: It will show the adding page frame.
+	 */
 	void UI() {
 		actionDetect();
 		addMain.setVisible(true);
@@ -218,6 +232,10 @@ public class addPage {
 		condition = "open";
 	}
 	
+	/*
+	 * Function name: actionDetect
+	 * Description: It will detect user input on the adding page
+	 */
 	void actionDetect() {
 		food.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -412,6 +430,10 @@ public class addPage {
 		});
 	}
 	
+	/*
+	 * Function name: inputActionDetect
+	 * Description: It will detect user input on the amount window
+	 */
 	void inputActionDetect() {
 		cancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -508,6 +530,10 @@ public class addPage {
 		});
 	}
 	
+	/*
+	 * Function name: validDoulbe
+	 * Description: Check if the string is a double
+	 */
 	boolean validDoulbe() {
 		Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
 		return pattern.matcher(amount).matches();

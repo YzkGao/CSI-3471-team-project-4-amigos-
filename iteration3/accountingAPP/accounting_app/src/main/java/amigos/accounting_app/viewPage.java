@@ -1,3 +1,9 @@
+/*
+ * Team: 4 amigos
+ * Members: Maiqi Hou, Jingke Shi, Yangzekun Gao, Zhengyan Hu
+ * 
+ * File description: This function creates the view page.
+ */
 package amigos.accounting_app;
 
 import java.awt.Font;
@@ -47,12 +53,16 @@ public class viewPage {
 	// indicate the condition of the frame
     String condition = new String();
     
+	/*
+	 * Function name: viewPage
+	 * Description: The default constructor.
+	 */
 	viewPage() throws FileNotFoundException{
 		// set frame
 		viewMain = new JFrame("viewing");
 		viewMain.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // only main page supports close function
 		viewMain.setLayout(null);
-		viewMain.setResizable(false);
+		//viewMain.setResizable(false);
 		viewMain.setSize(900, 900);
 		frameIcon = new ImageIcon("resource\\icon.jpg");
 		viewMain.setIconImage(frameIcon.getImage());
@@ -113,6 +123,10 @@ public class viewPage {
 		viewMain.add(background);
 	}
 	
+	/*
+	 * Function name: UI
+	 * Description: It will show the viewing page frame.
+	 */
 	void UI() throws FileNotFoundException {
 		
 		date.setText(Integer.toString(calendar.get(Calendar.YEAR)) + "--"
@@ -126,6 +140,10 @@ public class viewPage {
 		condition = "open";
 	}
 	
+	/*
+	 * Function name: actionDetect
+	 * Description: It will detect user input on the viewing page
+	 */
 	void actionDetect() {
 		table.table.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
 	        public void valueChanged(ListSelectionEvent event) {
@@ -204,12 +222,22 @@ public class viewPage {
 		});
 	}
 	
+	/*
+	 * Function name: setRange
+	 * Description: It will receive a date instance as the date filter
+	 * for the JTable
+	 */
 	void setRange(Date date) {
 		calendar = Calendar.getInstance();
 		calendar.setTime(date);
 		table.setDate(calendar);
 	}
 	
+	/*
+	 * Function name: fill
+	 * Description: This function will read database, apply the date filter,
+	 * then fill the JTable
+	 */
 	void fill() throws FileNotFoundException {
 		File myObj = new File("resource\\database.csv");
 		Scanner scanner = new Scanner(myObj);
@@ -235,6 +263,10 @@ public class viewPage {
 		}
 	}
 	
+	/*
+	 * Function name: round
+	 * Description: Round a double number to avoid it become too long
+	 */
 	double round(double value, int places) {
 	    if (places < 0) throw new IllegalArgumentException();
 
@@ -244,6 +276,10 @@ public class viewPage {
 	    return (double) tmp / factor;
 	}
 	
+	/*
+	 * Function name: statistic
+	 * Description: Calculate some data(balance, expense, income) of the table
+	 */
 	void statistic() {
 		double sum, in = 0, out = 0;
 		for(int i=0; i < table.table.getRowCount(); i++) {

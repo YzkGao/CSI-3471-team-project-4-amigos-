@@ -1,3 +1,10 @@
+/*
+ * Team: 4 amigos
+ * Members: Maiqi Hou, Jingke Shi, Yangzekun Gao, Zhengyan Hu
+ * 
+ * File description: This function creates the main menu page, and it
+ * linked to adding page and viewing page.
+ */
 package amigos.accounting_app;
 
 import java.awt.Color;
@@ -30,12 +37,16 @@ public class mainPage {
 	
 	JButton back, viewRange;
 	
+	/*
+	 * Function name: mainPage
+	 * Description: The default constructor.
+	 */
 	mainPage() throws FileNotFoundException{
 		// set frame
 		main = new JFrame("Home");
 		main.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		main.setLayout(null);
-		main.setResizable(false);
+		//main.setResizable(false);
 		main.setSize(700, 900);
 		
 		// set frame icon
@@ -73,6 +84,10 @@ public class mainPage {
 		main.add(background);
 	}
 	
+	/*
+	 * Function name: UI
+	 * Description: It will show the main menu page frame.
+	 */
 	void UI(){
 		this.actionDetect();
 		main.setVisible(true);
@@ -82,7 +97,10 @@ public class mainPage {
 	}
 	
 	
-	
+	/*
+	 * Function name: actionDetect
+	 * Description: It will detect user input on the main page
+	 */
 	void actionDetect() {
 		add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

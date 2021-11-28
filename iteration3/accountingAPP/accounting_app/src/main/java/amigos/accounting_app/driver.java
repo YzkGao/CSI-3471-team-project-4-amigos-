@@ -1,3 +1,11 @@
+/*
+ * Team: 4 amigos
+ * Members: Maiqi Hou, Jingke Shi, Yangzekun Gao, Zhengyan Hu
+ * 
+ * File description: This is the driver of the application with the main function.
+ * It will generate the database and call the UI function of the main menu page
+ */
+
 package amigos.accounting_app;
 
 import java.io.File;

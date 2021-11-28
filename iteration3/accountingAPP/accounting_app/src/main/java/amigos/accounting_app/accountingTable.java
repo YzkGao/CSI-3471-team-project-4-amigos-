@@ -1,3 +1,9 @@
+/*
+ * Team: 4 amigos
+ * Members: Maiqi Hou, Jingke Shi, Yangzekun Gao, Zhengyan Hu
+ * 
+ * File description: This function is a container of a bunch of records
+ */
 package amigos.accounting_app;
 
 import java.io.BufferedReader;
@@ -29,6 +35,10 @@ public class accountingTable {
 	
 	File database;
 	
+	/*
+	 * Function name: accountingTable
+	 * Description: The default constructor
+	 */
 	accountingTable() throws FileNotFoundException{
 		model = new DefaultTableModel(column, 0) {
 		    @Override
@@ -46,6 +56,10 @@ public class accountingTable {
 		table.getColumnModel().getColumn(4).setPreferredWidth(500);
 	}
 	
+	/*
+	 * Function name: export
+	 * Description: Write records to a given file
+	 */
 	void export(File file) {
 		double sum, in = 0, out = 0;
 		for(int i=0; i < table.getRowCount(); i++) {
@@ -85,10 +99,18 @@ public class accountingTable {
 		  }
 	}
 	
+	/*
+	 * Function name: setDate
+	 * Description: Set the date filter for the container
+	 */
 	void setDate(Calendar c) {
 		dateFilter = c;
 	}
 	
+	/*
+	 * Function name: match
+	 * Description: Return true if the record meets all filters
+	 */
 	boolean match(Record record, String str) {
 		String str2;
 		if(str.split(",").length == 7) {
@@ -109,6 +131,10 @@ public class accountingTable {
 		
 	}
 	
+	/*
+	 * Function name: delete
+	 * Description: Delete one record
+	 */
 	void delete() throws IOException {
 		Record record = new Record();
 		int ndx = table.getSelectedRow();
@@ -141,6 +167,10 @@ public class accountingTable {
 		rewrite();
 	}
 	
+	/*
+	 * Function name: clearFile
+	 * Description: To empty a file, it is a part of deleting records
+	 */
 	void clearFile() throws IOException {
 		FileWriter fwOb = new FileWriter("resource\\database.csv", false); 
         PrintWriter pwOb = new PrintWriter(fwOb, false);
@@ -149,6 +179,10 @@ public class accountingTable {
         fwOb.close();
 	}
 	
+	/*
+	 * Function name: rewrite
+	 * Description: Rewrite the database, it is a part of deleting records
+	 */
 	void rewrite() {
 		 try {
 
