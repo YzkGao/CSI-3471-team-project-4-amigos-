@@ -33,7 +33,7 @@ public class viewPage {
 	JFrame viewMain;
 	JLabel background;
 	ImageIcon backgroundIcon, frameIcon;
-	JButton back, delete;
+	JButton back, delete, edit;
 	
 	JMenuBar menuBar;
 	JMenu menu;
@@ -46,6 +46,7 @@ public class viewPage {
 	accountingTable table; // the record table
 	
 	JFileChooser chooser;  // export file chooser;
+	
 	
 	// warning for deletion
 	JFrame warn;
@@ -103,12 +104,15 @@ public class viewPage {
 		
 		// set delete button
 		delete = new JButton("delete");
-		delete.setBounds(750, 700, 100, 100);
+		delete.setBounds(750, 700, 70, 50);
 		
 		// set back button
 		back = new JButton("back");
-		back.setFont(new Font("Serif", Font.PLAIN, 14));
-		back.setBounds(10, 780, 70, 50);
+		back.setBounds(10, 700, 70, 50);
+		
+		// set edit button
+		edit = new JButton("edit");
+		edit.setBounds(650, 700, 70, 50);
 		
 		// add attributes to frame
 		viewMain.setJMenuBar(menuBar);
@@ -118,6 +122,7 @@ public class viewPage {
 		viewMain.add(totalIncome);
 		viewMain.add(delete);
 		viewMain.add(back);
+		viewMain.add(edit);
 		
 		viewMain.add(table.panel);
 		viewMain.add(background);
@@ -220,6 +225,7 @@ public class viewPage {
 				condition = "back to main";
 			}
 		});
+		
 	}
 	
 	/*

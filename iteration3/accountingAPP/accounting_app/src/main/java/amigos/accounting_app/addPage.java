@@ -163,12 +163,12 @@ public class addPage {
 		// set create button
 		create = new JButton("create");
 		create.setFont(new Font("Serif", Font.PLAIN, 14));
-		create.setBounds(600, 800, 70, 50);
+		create.setBounds(600, 700, 70, 50);
 		
 		// set back button
 		back = new JButton("back");
 		back.setFont(new Font("Serif", Font.PLAIN, 14));
-		back.setBounds(10, 800, 70, 50);
+		back.setBounds(10, 700, 70, 50);
 		
 		// set comment
 		comment = new JLabel("Comment:");
