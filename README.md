@@ -2,11 +2,11 @@
 Team Project for CSI3471 2021
 
 Group Member:
+
     Yangzekun Gao
     Maiqi Hou
     Zhengyan Hu
     Jingke Shi
-    
 
 
 [Product Features]
