@@ -11,15 +11,15 @@ Group Member:
 
 [Product Features]
 
-Accounting in 3 seconds: 
+    Accounting in 3 seconds: 
 
-The minimalist operation process allows you to complete an accounting operation in 3 seconds
+       The minimalist operation process allows you to complete an accounting operation in 3 seconds
+   
+    Consumption trends:
 
-Consumption trends: 
+       clear charts to help you quickly analyze consumption data
 
-clear charts to help you quickly analyze consumption data
+    Remarks: 
 
-Remarks: 
-
-Your bookkeeping process is getting easier and easier
+       Your bookkeeping process is getting easier and easier
 
