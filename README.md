@@ -1,7 +1,7 @@
 # CSI-3471-team-project-4-amigos-
 Team Project for CSI3471 2021
 
-Group Member:
+Team Member:
 
     Yangzekun Gao
     Maiqi Hou
