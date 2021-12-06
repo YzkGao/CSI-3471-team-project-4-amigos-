@@ -1,0 +1,5 @@
+Use case video ---- link:
+Maiqi Hou:
+    Add Amount UC: https://youtu.be/-FcQbs-SNkI
+    Add Record UC: https://youtu.be/v7eqGl19Z3Q
+    Export file UC: https://youtu.be/Exz4AfoOh5k
