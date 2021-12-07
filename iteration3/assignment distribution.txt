@@ -5,8 +5,8 @@
 5. video of distinct use cases - 15 - 20 sec per
 (1) from main to add (2) from main to view (3) from add to main (4) from view to main
 (5) date filter (6) show table (7) event, type filter (8) export file (9) add amount
-(10) add record  (11) edit record
-(1-5) Shi, (6-8) Hu, (9-11) Hou
+(10) add record 
+(1-5) Shi, (6-8) Hu, (9-10) Hou
 6. results from git analysis (how many commits, each member commits) - Hou
 7. linking issue tracking - Hou
 8. reporting the number of issues per member in the issue tracking - Gao
