@@ -7,6 +7,7 @@
 package amigos.accounting_app;
 
 import java.awt.Font;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -28,6 +29,19 @@ import javax.swing.JMenuItem;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+
+/**
+ * 
+ * class viewPage create a GUI for the view page and show the
+ * records within the given range and some functions for user.
+ * 
+ * @see javax.swing.JFrame
+ * @see java.awt.event.ActionListener
+ * 
+ * 
+ * @author Yangzekun Gao, Maiqi Hou, Jingke Shi, Zhengyan Hu
+ * @version 1.0 (Nov 30 2021)
+ */
 public class viewPage {
 	
 	JFrame viewMain;
@@ -57,6 +71,12 @@ public class viewPage {
 	 * Function name: viewPage
 	 * Description: The default constructor.
 	 */
+	/**
+	* Constructor for viewPage which will create the User Interface
+	* with JFrame Table and button for the records
+	* 
+	* @see javax.swing.JFrame;
+	*/
 	viewPage() throws FileNotFoundException{
 		// set frame
 		viewMain = new JFrame("viewing");
@@ -127,6 +147,14 @@ public class viewPage {
 	 * Function name: UI
 	 * Description: It will show the viewing page frame.
 	 */
+	
+	/**
+	* Graphical user interface creator. When add button was click 
+	* system will show add Page. Show the data on the table and some other
+	* data.
+	* 
+	* Use the {@link #void amigos.accounting_app.viewPage.statistic() statistic} method
+	*/
 	void UI() throws FileNotFoundException {
 		
 		date.setText(Integer.toString(calendar.get(Calendar.YEAR)) + "--"
@@ -134,7 +162,6 @@ public class viewPage {
 		actionDetect();
 		fill();
 		statistic();
-		
 		
 		viewMain.setVisible(true);
 		condition = "open";
@@ -144,6 +171,14 @@ public class viewPage {
 	 * Function name: actionDetect
 	 * Description: It will detect user input on the viewing page
 	 */
+	
+	/**
+	* Detect the action of User and take action for it, such as
+	* export, delete and back.
+	* 
+	* @see java.awt.event.ActionListener
+	* @throws IOException throw if any exception occur
+	*/
 	void actionDetect() {
 		table.table.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
 	        public void valueChanged(ListSelectionEvent event) {
@@ -227,6 +262,14 @@ public class viewPage {
 	 * Description: It will receive a date instance as the date filter
 	 * for the JTable
 	 */
+	
+	/**
+	* Set the Range for the calendar with given data and
+	* setTable to the given date
+	* 
+	* Use the {@link #void amigos.accounting_app.accountingTable.setDate(Calendar c)
+	* setDate} method.
+	*/
 	void setRange(Date date) {
 		calendar = Calendar.getInstance();
 		calendar.setTime(date);
@@ -238,6 +281,16 @@ public class viewPage {
 	 * Description: This function will read database, apply the date filter,
 	 * then fill the JTable
 	 */
+	/**
+	* This function will open the database file, and parse the file to each
+	* records and use add row function to add to the JTable if they are in the
+	* given range
+	* 
+	* Use the {@link #void javax.swing.table.DefaultTableModel.addRow(Object[] rowData)
+	* addRow} method.
+	* 
+	* @throws FileNotFoundException throw if file no found
+	*/
 	void fill() throws FileNotFoundException {
 		File myObj = new File("resource\\database.csv");
 		Scanner scanner = new Scanner(myObj);
@@ -267,6 +320,16 @@ public class viewPage {
 	 * Function name: round
 	 * Description: Round a double number to avoid it become too long
 	 */
+	
+	/**
+	* This function round the value to avoid it become too long
+	* 
+	* @param value the value need to be round
+	* @param places the 0 after the value
+	* @return double return the value after round
+	* 
+	* @throws IllegalArgumentException throw if places < 0
+	*/
 	double round(double value, int places) {
 	    if (places < 0) throw new IllegalArgumentException();
 
@@ -280,6 +343,12 @@ public class viewPage {
 	 * Function name: statistic
 	 * Description: Calculate some data(balance, expense, income) of the table
 	 */
+	
+	/**
+	* This function calculate the balance, expense and income
+	* base on the records of table and print it on the sceen
+	* 
+	*/
 	void statistic() {
 		double sum, in = 0, out = 0;
 		for(int i=0; i < table.table.getRowCount(); i++) {

@@ -1,5 +1,6 @@
 /*
  * Team: 4 amigos
+
  * Members: Maiqi Hou, Jingke Shi, Yangzekun Gao, Zhengyan Hu
  * 
  * File description: This function creates the main menu page, and it
@@ -12,12 +13,20 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+/**
+ * The main page of software which will take user to different module
+ * by show the new page(addPage and FCalendar)
+ * 
+ * @author Yangzekun Gao, Maiqi Hou, Jingke Shi, Zhengyan Hu
+ * @version 1.0 (Nov 30 2021)
+ */
 public class mainPage {
 	// frame attributes
 	JFrame main;
@@ -37,9 +46,11 @@ public class mainPage {
 	
 	JButton back, viewRange;
 	
-	/*
-	 * Function name: mainPage
-	 * Description: The default constructor.
+	/**
+	 * Constructor for mainPage which will initialize the 
+	 * Page with Imagine 
+	 * 
+	 * @throws FileNotFoundException throw if file not found
 	 */
 	mainPage() throws FileNotFoundException{
 		// set frame
@@ -88,6 +99,12 @@ public class mainPage {
 	 * Function name: UI
 	 * Description: It will show the main menu page frame.
 	 */
+	
+	/**
+	* Graphical user interface creator. When user open the software
+	* 
+	* Use the {@link #actionDetect() actionDetect} method
+	*/
 	void UI(){
 		this.actionDetect();
 		main.setVisible(true);
@@ -101,6 +118,12 @@ public class mainPage {
 	 * Function name: actionDetect
 	 * Description: It will detect user input on the main page
 	 */
+	/**
+	 * Detect the action of User and show the other page module for user
+	 * 
+	 * @see java.awt.event.ActionListener
+	 * @throws FileNotFoundException throw if file not found
+	 */
 	void actionDetect() {
 		add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -109,6 +132,7 @@ public class mainPage {
 				addpage.UI();
 			}
 		});
+		
 		view.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				main.setVisible(false);

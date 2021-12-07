@@ -9,12 +9,29 @@
 package amigos.accounting_app;
 
 import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * 
+ * Main function for the software. This function will load the data function system
+ * if the user have records before and show the add page to the screen.
+ * 
+ * @author Yangzekun Gao, Maiqi Hou, Jingke Shi, Zhengyan Hu
+ * @version 1.0 (Nov 30 2021)
+ */
 public class driver {
 
+	/**
+	 * 
+	 * Main function for the software. This function will load the data function system
+	 * if the user have records before and show the add page to the screen.
+	 * @throws FileNotFoundException throw if file not found
+	 * 
+	 * @param args user are no expected to use arguments
+	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		File database = new File("resource\\database.csv");

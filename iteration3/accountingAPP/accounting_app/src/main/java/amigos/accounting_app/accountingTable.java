@@ -1,5 +1,6 @@
 /*
  * Team: 4 amigos
+
  * Members: Maiqi Hou, Jingke Shi, Yangzekun Gao, Zhengyan Hu
  * 
  * File description: This function is a container of a bunch of records
@@ -22,11 +23,22 @@ import javax.swing.table.DefaultTableModel;
 import net.coderazzi.filters.gui.AutoChoices;
 import net.coderazzi.filters.gui.TableFilterHeader;
 
+/**
+ * 
+ * class accountingTable collect a bunch of "records"
+ * and contains the function to deal with "records"
+ * 
+ * @see amigos.accounting_app.Record
+ * 
+ * @author Yangzekun Gao, Maiqi Hou, Jingke Shi, Zhengyan Hu
+ * @version 1.0 (Nov 30 2021)
+ */
 public class accountingTable {
 	String []column = {"Day", "Type", "Event", "Amount","Comment"};
 	
 	String eventFilter, typeFilter;
 	Calendar dateFilter;
+	
 	
 	DefaultTableModel model;
 	JTable table;
@@ -35,10 +47,13 @@ public class accountingTable {
 	
 	File database;
 	
-	/*
-	 * Function name: accountingTable
-	 * Description: The default constructor
-	 */
+	
+	/**
+	* Constructor for accountingTable which will initialize the 
+	* Java Swing Table for the records
+	* 
+	* @see javax.swing.table.DefaultTableModel
+	*/
 	accountingTable() throws FileNotFoundException{
 		model = new DefaultTableModel(column, 0) {
 		    @Override
@@ -56,11 +71,16 @@ public class accountingTable {
 		table.getColumnModel().getColumn(4).setPreferredWidth(500);
 	}
 	
-	/*
-	 * Function name: export
-	 * Description: Write records to a given file
+
+	/**
+	 * Export Module implementation; Traverse the current table and
+	 * Write records to a given file. Open the file and print each 
+	 * record to the file.
+	 * @param file provide the file to be output
+	 * @throws IOException throw if any io exception occur
 	 */
 	void export(File file) {
+
 		double sum, in = 0, out = 0;
 		for(int i=0; i < table.getRowCount(); i++) {
 			String temp = (String) table.getValueAt(i, 1);
@@ -99,9 +119,13 @@ public class accountingTable {
 		  }
 	}
 	
-	/*
-	 * Function name: setDate
-	 * Description: Set the date filter for the container
+
+	/**
+	 * provide with Calendar, set the filter for the records
+	 * according to the range of given Calendar. Change the 
+	 * dateFilter to c
+	 * 
+	 * @param c provide the Calendar which can set a day filter 
 	 */
 	void setDate(Calendar c) {
 		dateFilter = c;
@@ -110,6 +134,17 @@ public class accountingTable {
 	/*
 	 * Function name: match
 	 * Description: Return true if the record meets all filters
+	 */
+	
+	/**
+	 * Provide with two records. One is string type, another is 
+	 * Record type. Function will parse the record to String type
+	 * and compare the string to match each other.
+	 * 
+	 * @param record The first record to be match 
+	 * @param str The second record to be match in String Type
+	 * @return boolean 
+	 * @see java.lang.String
 	 */
 	boolean match(Record record, String str) {
 		String str2;
@@ -131,9 +166,12 @@ public class accountingTable {
 		
 	}
 	
-	/*
-	 * Function name: delete
-	 * Description: Delete one record
+	
+	/**
+	 * This Function delete the current select record on the table
+	 * We will delete the previous file and initialize a new file to
+	 * store the new data without the select row 
+	 * @throws IOException throw if any exception occur
 	 */
 	void delete() throws IOException {
 		Record record = new Record();
@@ -160,7 +198,6 @@ public class accountingTable {
 		    if(match(record, currentLine)) continue;
 		    writer.write(currentLine + System.getProperty("line.separator"));
 		}
-		
 		writer.close(); 
 		reader.close();
 		clearFile();
@@ -170,6 +207,13 @@ public class accountingTable {
 	/*
 	 * Function name: clearFile
 	 * Description: To empty a file, it is a part of deleting records
+	 */
+	
+	/**
+	 * This Function is part of delete function which will 
+	 * clear the old data file
+	 * 
+	 * @throws IOException throw if any exception occur
 	 */
 	void clearFile() throws IOException {
 		FileWriter fwOb = new FileWriter("resource\\database.csv", false); 
@@ -182,6 +226,13 @@ public class accountingTable {
 	/*
 	 * Function name: rewrite
 	 * Description: Rewrite the database, it is a part of deleting records
+	 */
+	
+	/**
+	 * This Function is part of delete function which will 
+	 * write the new data to new data file
+	 * 
+	 * @throws IOException throw if any exception occur
 	 */
 	void rewrite() {
 		 try {

@@ -1,5 +1,6 @@
 /*
  * Team: 4 amigos
+
  * Members: Maiqi Hou, Jingke Shi, Yangzekun Gao, Zhengyan Hu
  * 
  * File description: This function creates the adding page.
@@ -7,6 +8,7 @@
 package amigos.accounting_app;
 
 import java.awt.Font;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -20,6 +22,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+/**
+ * 
+ * class addPage Create a GUI for the add Page and input from user action
+ * with JFrame, JButton and ActionListener. Store the input to record and 
+ * save it at the local system
+ * 
+ * @see javax.swing.JFrame
+ * @see java.awt.event.ActionListener
+ * 
+ * 
+ * @author Yangzekun Gao, Maiqi Hou, Jingke Shi, Zhengyan Hu
+ * @version 1.0 (Nov 30 2021)
+ */
 public class addPage {
 	JFrame addMain;
 	JLabel background;
@@ -69,6 +84,13 @@ public class addPage {
 	 * Function name: addPage
 	 * Description: The default constructor
 	 */
+	
+	/**
+	* Constructor for addPage which will create the User Interface
+	* with JFrame Table and button for the records
+	* 
+	* @see javax.swing.JFrame;
+	*/
 	addPage(){
 		// set record
 		record = new Record();
@@ -135,7 +157,7 @@ public class addPage {
 		edit = new JButton("edit");
 		edit.setBounds(20, 340, 70, 50);
 		
-		// set data geter
+		// set data getter
 		year = new JLabel("Year:");
 		year.setFont(new Font("Serif", Font.PLAIN, 20));
 		month = new JLabel("Mounth:");
@@ -224,6 +246,13 @@ public class addPage {
 	 * Function name: UI
 	 * Description: It will show the adding page frame.
 	 */
+	
+	/**
+	* Graphical user interface creator. When add button was click 
+	* system will show add Page
+	* 
+	* Use the {@link #actionDetect() actionDetect} method
+	*/
 	void UI() {
 		actionDetect();
 		addMain.setVisible(true);
@@ -236,6 +265,14 @@ public class addPage {
 	 * Function name: actionDetect
 	 * Description: It will detect user input on the adding page
 	 */
+	
+	/**
+	* Detect the action of User and store each action to class variable
+	* and may show a new page for user to click to input the nubmer of amount
+	* 
+	* @see java.awt.event.ActionListener
+	* @throws IOException throw if any exception occur
+	*/
 	void actionDetect() {
 		food.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -430,9 +467,12 @@ public class addPage {
 		});
 	}
 	
-	/*
-	 * Function name: inputActionDetect
-	 * Description: It will detect user input on the amount window
+	/**
+	 * This Function detect the action from user
+	 * which perform like a calculator, each time people
+	 * click number will be stored. 
+	 * 
+	 * @see java.awt.event.ActionListener
 	 */
 	void inputActionDetect() {
 		cancel.addActionListener(new ActionListener() {
@@ -530,9 +570,11 @@ public class addPage {
 		});
 	}
 	
-	/*
-	 * Function name: validDoulbe
-	 * Description: Check if the string is a double
+	/**
+	 * The function return the pattern of float number
+	 * for the string to check the by regular  expression 
+	 * @return boolean if amount match to double pattern, function return true, else false
+	 * @see java.util.regex.Pattern
 	 */
 	boolean validDoulbe() {
 		Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
