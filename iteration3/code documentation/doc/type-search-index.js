@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"amigos.accounting_app","l":"accountingTable"},{"p":"amigos.accounting_app","l":"addPage"},{"l":"All Classes","u":"allclasses-index.html"},{"p":"amigos.accounting_app","l":"FCalendar"},{"p":"amigos.accounting_app","l":"mainPage"},{"p":"amigos.accounting_app","l":"Record"},{"p":"amigos.accounting_app","l":"viewPage"}];updateSearchResults();
