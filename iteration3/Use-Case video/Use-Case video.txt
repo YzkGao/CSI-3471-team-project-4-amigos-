@@ -18,4 +18,8 @@ Zhengyan Hu:
     event,type filter:
     export file:
     
+Yangzekun Gao:
+    from view page back to home page: https://youtu.be/wz3FtvLFZNc
+    select a time range to view the recods: https://youtu.be/UljaWMaM5Z0
+    
   
