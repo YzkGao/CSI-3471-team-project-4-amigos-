@@ -42,7 +42,6 @@ public class FCalendar {
 	* Show the frame to the screen and get the time which user select
 	* and store the date
 	* 
-	* void org.jdesktop.swingx.JXDatePicker.setDate(Date date)
 	* Use the {@link #org.jdesktop.swingx.JXDatePicker.setDate(Date date) 
 	* setDate} method.
 	*/
