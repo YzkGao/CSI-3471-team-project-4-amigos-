@@ -10,8 +10,6 @@ Jingke Shi:
     From main to add:
     From main to view:
     From add to main:
-    From view to main:
-    From data filter:
     
 Zhengyan Hu:
     Show table:
