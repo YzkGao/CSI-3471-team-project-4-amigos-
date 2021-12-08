@@ -1,7 +1,7 @@
 1. code - Gao
 2. test documentation and JUnit testing - Gao
 3. User guide - Shi
-4. live demonstration - Shi ( input and output) - 2-3 min
+4. live demonstration - Shi ( input and output) - 2 min
 5. video of distinct use cases - 15 - 20 sec per
 (1) from main to add (2) from main to view (3) from add to main (4) from view to main
 (5) date filter (6) show table (7) event, type filter (8) export file (9) add amount
